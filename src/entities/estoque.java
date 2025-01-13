@@ -11,7 +11,7 @@ public class estoque
     private double valor;
     private int quantidade;
 
-    public estoque(String produto, String descricao, String categoria, double valor, int quantidade)
+    public estoque(String produto, String descricao, String categoria, double valor, int quantidade) 
     {
         this.produto = produto;
         this.descricao = descricao;
@@ -20,7 +20,7 @@ public class estoque
         this.quantidade = quantidade;
     }
 
-    public estoque(int id, String produto, String descricao, String categoria, double valor, int quantidade)
+    public estoque(int id, String produto, String descricao, String categoria, double valor, int quantidade) 
     {
         this.id = id;
         this.produto = produto;
@@ -30,54 +30,47 @@ public class estoque
         this.quantidade = quantidade;
     }
 
-    public void reduzirQuantidade(int quantidade) throws estoqueException
+    public void reduzirQuantidade(int quantidade) throws estoqueException 
     {
-        if (quantidade > this.quantidade)
+        if (quantidade > this.quantidade) 
         {
             throw new estoqueException("Quantidade solicitada excede o estoque disponível para o produto: " + this.produto);
         }
         this.quantidade -= quantidade;
     }
 
-    public void aumentarQuantidade(int quantidade)
+    public void aumentarQuantidade(int quantidade) 
     {
         this.quantidade += quantidade;
     }
 
-    public int getID()
+    public int getID() 
     {
         return id;
     }
 
-    public String getProduto()
+    public String getProduto() 
     {
         return produto;
     }
 
-    public String getDescricao()
+    public String getDescricao() 
     {
         return descricao;
     }
 
-    public String getCategoria()
+    public String getCategoria() 
     {
         return categoria;
     }
 
-    public double getValor()
+    public double getValor() 
     {
         return valor;
     }
 
-    public int getQuantidade()
+    public int getQuantidade() 
     {
         return quantidade;
     }
-
-    @Override
-public String toString() {
-    return String.format("ID: %d | Nome: %s | Descrição: %s | Categoria: %s | Valor: R$%.2f | Estoque: %d", 
-        this.id, this.produto, this.descricao, this.categoria, this.valor, this.quantidade);
-}
-
 }
