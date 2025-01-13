@@ -1,6 +1,6 @@
 package src.teste;
 
-public class estoqueException extends Exception 
+public class estoqueException extends RuntimeException 
 {
     public estoqueException(String mensagem) 
     {
